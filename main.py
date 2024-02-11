@@ -11,7 +11,7 @@ pc = Pinecone( api_key="a50b7178-a08d-4ec9-a308-72281ad5e02d" )
 index = pc.Index(host="https://medicare-bot-nex955c.svc.gcp-starter.pinecone.io")
 load_dotenv()
 
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="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")
 
 
 def generate_embedding(text, model="text-embedding-ada-002"):
