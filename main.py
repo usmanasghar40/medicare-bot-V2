@@ -115,8 +115,8 @@ Moreover, ensure to keep the conversation focused on Medicare-related topics. If
         for vector in query_response['matches']:
            context+=vector.metadata['chunk_content']
         print("context: ",context)
-        # st.session_state.messages.append({"role": "system", "content": f"""You're advised to use your personal knowledge as well as the relevant information below to answer user's query:
-        #                                   Relevant Information: {context}"""})
+        st.session_state.messages.append({"role": "system", "content": f"""You're advised to use your personal knowledge as well as the relevant information below to answer user's query:
+                                          Relevant Information: {context}"""})
         with st.chat_message("user"):
             st.markdown(prompt)
 
