@@ -7,11 +7,11 @@ import json
 from dotenv import load_dotenv
 import PyPDF2
 from pinecone import Pinecone
-pc = Pinecone( api_key=os.environ.get("PINECONE_API_KEY") )
-index = pc.Index(host=os.environ.get('INDEX_HOST'),)
+pc = Pinecone( api_key="a50b7178-a08d-4ec9-a308-72281ad5e02d" )
+index = pc.Index(host="https://medicare-bot-nex955c.svc.gcp-starter.pinecone.io")
 load_dotenv()
 
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+client = OpenAI(api_key="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")
 
 
 def generate_embedding(text, model="text-embedding-ada-002"):
