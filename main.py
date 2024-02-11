@@ -7,11 +7,11 @@ import json
 from dotenv import load_dotenv
 import PyPDF2
 from pinecone import Pinecone
-pc = Pinecone( api_key=st.secrets['PINECONE_API_KEY'])
-index = pc.Index(host=st.secrets['INDEX_HOST'])
+pc = Pinecone( api_key=os.environ.get("PINECONE_API_KEY") )
+index = pc.Index(host=os.environ.get('INDEX_HOST'),)
 load_dotenv()
 
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 
 def generate_embedding(text, model="text-embedding-ada-002"):
@@ -115,8 +115,8 @@ Moreover, ensure to keep the conversation focused on Medicare-related topics. If
         for vector in query_response['matches']:
            context+=vector.metadata['chunk_content']
         print("context: ",context)
-        st.session_state.messages.append({"role": "system", "content": f"""You're advised to use your personal knowledge as well as the relevant information below to answer user's query:
-                                          Relevant Information: {context}"""})
+        # st.session_state.messages.append({"role": "system", "content": f"""You're advised to use your personal knowledge as well as the relevant information below to answer user's query:
+        #                                   Relevant Information: {context}"""})
         with st.chat_message("user"):
             st.markdown(prompt)
 
