@@ -13,6 +13,7 @@ load_dotenv()
 
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
+
 def generate_embedding(text, model="text-embedding-ada-002"):
 #    text = text.replace("\n", " ")
    return client.embeddings.create(input = [text], model=model).data[0].embedding
