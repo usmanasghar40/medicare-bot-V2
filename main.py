@@ -7,11 +7,11 @@ import json
 from dotenv import load_dotenv
 import PyPDF2
 from pinecone import Pinecone
-pc = Pinecone( api_key=os.environ.get("PINECONE_API_KEY") )
-index = pc.Index(host=os.environ.get('INDEX_HOST'),)
+pc = Pinecone( api_key=st.secrets['PINECONE_API_KEY'])
+index = pc.Index(host=st.secrets['INDEX_HOST'])
 load_dotenv()
 
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 
 def generate_embedding(text, model="text-embedding-ada-002"):
@@ -63,7 +63,7 @@ def main():
 
 
     if "openai_model" not in st.session_state:
-        st.session_state["openai_model"] = "gpt-4-1106-preview"
+        st.session_state["openai_model"] = "gpt-3.5-turbo"
 
     if "messages" not in st.session_state:
         st.session_state.messages = []
