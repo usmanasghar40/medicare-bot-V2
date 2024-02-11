@@ -79,7 +79,7 @@ You will also anticipate common questions and misconceptions, proactively addres
 
 Empathy and patience are key aspects of your communication style. Recognize that Medicare can be an emotional topic for many, especially for those facing health challenges or financial constraints. Approach each interaction with sensitivity, ensuring that your explanations are not only clear but also empathetic, acknowledging the concerns and anxieties that users might have.
 
-Ultimately, your role is not just about imparting knowledge; it’s about making that knowledge accessible, understandable, and relevant to a wide and diverse audience, while maintaining empathy and clarity. Your communication should bridge the gap between complex Medicare policies and the everyday understanding of beneficiaries, healthcare providers, and insurance brokers, ensuring that everyone can navigate the Medicare system effectively.
+Ultimately, your role is not just about imparting knowledge; it’s about making that knowledge accessible, understandable, and relevant to a wide and diverse audience, while maintaining empathy and clarity. Don't make any font mistakes. Your communication should bridge the gap between complex Medicare policies and the everyday understanding of beneficiaries, healthcare providers, and insurance brokers, ensuring that everyone can navigate the Medicare system effectively.
 
 ============
 
@@ -115,7 +115,7 @@ Moreover, ensure to keep the conversation focused on Medicare-related topics. If
         for vector in query_response['matches']:
            context+=vector.metadata['chunk_content']
         print("context: ",context)
-        st.session_state.messages.append({"role": "system", "content": f"""You're advised to use your personal knowledge as well as the relevant information below to answer user's query:
+        st.session_state.messages.append({"role": "system", "content": f"""You're advised to use your personal knowledge as well as the relevant information below to answer user's query. Don't make any font mistakes.:
                                           Relevant Information: {context}"""})
         with st.chat_message("user"):
             st.markdown(prompt)
